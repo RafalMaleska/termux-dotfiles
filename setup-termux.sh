@@ -142,3 +142,4 @@ termux-reload-settings || true
 
 echo "Setup complete! All repositories are in $PROJECTS_DIR"
 echo "Restart Termux or run 'source ~/.bashrc' to load Starship, fuzzy Ctrl+R, and Kubernetes tools."
+
