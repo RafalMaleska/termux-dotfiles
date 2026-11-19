@@ -74,7 +74,7 @@ echo "Detected GitHub user: $GITHUB_USER"
 # 3. Update packages and install desktop, fuzzy search, Kubernetes (kubectl, helm, k9s), and Neovim dependencies
 echo "Updating packages and installing dependencies..."
 pkg update -y && pkg upgrade -y
-pkg install -y git openssh neovim starship chezmoi curl jq tmux termux-api ripgrep fd fzf kubectl helm k9s
+pkg install -y git openssh neovim starship chezmoi curl jq tmux termux-api ripgrep fd fzf kubectl helm k9s mise
 
 # 4. Configure Git identity and push defaults automatically
 echo "Configuring Git identity and defaults..."
