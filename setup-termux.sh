@@ -71,7 +71,7 @@ fi
 
 echo "Detected GitHub user: $GITHUB_USER"
 
-# 3. Update packages and install desktop, fuzzy search, Kubernetes (kubectl, helm, k9s, kubectx), and Neovim dependencies
+# 3. Update packages and install desktop, fuzzy search, Kubernetes (kubectl, helm, k9s), and Neovim dependencies
 echo "Updating packages and installing dependencies..."
 pkg update -y && pkg upgrade -y
 pkg install -y git openssh neovim starship chezmoi curl jq tmux termux-api ripgrep fd fzf kubectl helm k9s
@@ -142,4 +142,3 @@ termux-reload-settings || true
 
 echo "Setup complete! All repositories are in $PROJECTS_DIR"
 echo "Restart Termux or run 'source ~/.bashrc' to load Starship, fuzzy Ctrl+R, and Kubernetes tools."
-
