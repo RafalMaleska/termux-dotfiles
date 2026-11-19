@@ -12,14 +12,12 @@ kustomize = "latest"
 stern = "latest"                 # Multi-pod and container log tailing
 kubecolor = "latest"             # Colorizes kubectl output
 popeye = "latest"                # Kubernetes cluster sanitizer & linter
-kubectl-neat = "latest"          # Cleans up verbose kubectl YAML/JSON output
 pluto = "latest"                 # Detects deprecated Kubernetes API versions
 velero = "latest"                # Cluster backup and migration CLI
 
 # --- GitOps & Continuous Delivery ---
 flux2 = "latest"
 argocd = "latest"
-argorollouts = "latest"          # Progressive delivery / canary deployments
 
 # --- Infrastructure as Code & Policy ---
 terraform = "latest"
@@ -40,7 +38,6 @@ kubeseal = "latest"              # Bitnami Sealed Secrets CLI
 
 # --- Containers & Local Clusters ---
 dive = "latest"                  # Explore Docker/OCI image layers
-skopeo = "latest"                # Inspect and copy remote container images without Docker daemon
 crane = "latest"                 # Interact with remote image registries
 kind = "latest"                  # Kubernetes in Docker (for local testing)
 cilium-cli = "latest"            # Cilium CNI & Hubble troubleshooting CLI
