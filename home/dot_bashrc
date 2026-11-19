@@ -66,3 +66,8 @@ elif command -v kubectx >/dev/null 2>&1; then
     alias kc="kubectx"
     alias kcn="kubens"
 fi
+
+# Activate mise (adds kubectl, kubie, terraform, flux, etc. to PATH)
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate bash)"
+fi
