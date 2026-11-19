@@ -43,10 +43,9 @@ alias gcb="git checkout -b"
 alias gd="git diff"
 alias glog="git log --oneline --graph --decorate -n 20"
 
-# --- Kubernetes (kubectl & kubie) Aliases ---
+# --- Kubernetes (kubectl, helm, kubie/kubectx) Aliases ---
 alias k="kubectl"
-alias kc="kubie ctx"
-alias kcn="kubie ns"
+alias h="helm"
 alias kgp="kubectl get pods"
 alias kgpa="kubectl get pods -A"
 alias kgs="kubectl get svc"
@@ -58,3 +57,12 @@ alias kl="kubectl logs -f"
 alias kex="kubectl exec -it"
 alias kaf="kubectl apply -f"
 alias kdf="kubectl delete -f"
+
+# Context & namespace switchers (prefers kubie, falls back to kubectx/kubens)
+if command -v kubie >/dev/null 2>&1; then
+    alias kc="kubie ctx"
+    alias kcn="kubie ns"
+elif command -v kubectx >/dev/null 2>&1; then
+    alias kc="kubectx"
+    alias kcn="kubens"
+fi
