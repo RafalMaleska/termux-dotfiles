@@ -98,5 +98,17 @@ for REPO_URL in $REPOS; do
     fi
 done
 
+# 11. Ensure ~/.bashrc exists and initializes Starship
+touch "$HOME/.bashrc"
+if ! grep -q "starship init bash" "$HOME/.bashrc"; then
+    cat << 'BASHRC' >> "$HOME/.bashrc"
+
+# Initialize Starship prompt
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi
+BASHRC
+fi
+
 echo "Setup complete! All repositories are in $PROJECTS_DIR"
 echo "Restart Termux or run 'source ~/.bashrc' to load Starship."
