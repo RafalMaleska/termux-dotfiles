@@ -50,6 +50,4 @@ gh = "latest"                    # GitHub CLI
 lazygit = "latest"               # Terminal UI for Git (integrates with LazyVim)
 
 # --- Runtimes (Required by LazyVim LSPs & Automation) ---
-node = "lts"
-python = "latest"
 go = "latest"
