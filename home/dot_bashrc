@@ -1,0 +1,60 @@
+# --- Prompt & Fuzzy Search ---
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi
+
+# Enables fuzzy Ctrl+R history search, Ctrl+T file search, and Alt+C cd
+if command -v fzf >/dev/null 2>&1; then
+    eval "$(fzf --bash)"
+fi
+
+# Keep deep, deduplicated bash history for Ctrl+R
+export HISTSIZE=50000
+export HISTFILESIZE=100000
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+
+# --- Editor & Tools ---
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# --- General & Navigation Aliases ---
+alias v="nvim"
+alias t="tmux new-session -A -s main"
+alias ll="ls -la --color=auto"
+alias la="ls -A --color=auto"
+alias ..="cd .."
+alias ...="cd ../.."
+alias proj="cd ~/projects/GitHub.com/*"
+alias reload="source ~/.bashrc"
+
+# --- Git Aliases ---
+alias g="git"
+alias gs="git status -sb"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -m"
+alias gca="git commit --amend --no-edit"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+alias gl="git pull"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gd="git diff"
+alias glog="git log --oneline --graph --decorate -n 20"
+
+# --- Kubernetes (kubectl & kubie) Aliases ---
+alias k="kubectl"
+alias kc="kubie ctx"
+alias kcn="kubie ns"
+alias kgp="kubectl get pods"
+alias kgpa="kubectl get pods -A"
+alias kgs="kubectl get svc"
+alias kgd="kubectl get deployments"
+alias kgn="kubectl get nodes"
+alias kga="kubectl get all"
+alias kdp="kubectl describe pod"
+alias kl="kubectl logs -f"
+alias kex="kubectl exec -it"
+alias kaf="kubectl apply -f"
+alias kdf="kubectl delete -f"
